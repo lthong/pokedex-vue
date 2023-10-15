@@ -18,8 +18,8 @@ const routes = [
 ];
 
 const router = createRouter({
-  routes: routes,
-  history: createWebHistory(),
+  routes,
+  history: createWebHistory('/pokedex-vue'),
 });
 
 export { router };

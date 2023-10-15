@@ -1,5 +1,4 @@
 import { createStore } from 'vuex';
-
 import { pokemon } from './pokemon';
 
 export const store = createStore({
