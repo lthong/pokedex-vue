@@ -1,0 +1,10 @@
+body {
+  background: linear-gradient(to right, #d4d3dd, #efefbb);
+  font-family: sans-serif;
+  * {
+    box-sizing: border-box;
+  }
+  #app {
+    width: 100%;
+  }
+}
