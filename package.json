@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d build",
+    "deployGH": "yarn build && yarn deploy"
   },
   "dependencies": {
     "axios": "^1.5.1",
+    "gh-pages": "^6.0.0",
     "normalize.css": "^8.0.1",
     "vue": "^3.3.4",
     "vue-i18n": "^9.5.0",
