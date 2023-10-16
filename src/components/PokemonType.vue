@@ -13,9 +13,6 @@ export default {
     type: {
       type: String,
     },
-    onTypeChange: {
-      type: Function,
-    },
   },
 };
 </script>
