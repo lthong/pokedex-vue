@@ -19,7 +19,7 @@ const routes = [
 
 const router = createRouter({
   routes,
-  history: createWebHistory('/pokedex-vue'),
+  history: createWebHistory(import.meta.env.BASE_URL),
 });
 
 export { router };
