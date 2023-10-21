@@ -51,9 +51,10 @@
 
 <script>
 import { pokemonNames, pokeTypes, pokeTypeData } from '@/resource/pokemonData';
+import routerPath from '@/libraries/routerPath';
 import searchIcon from '@/assets/search.svg';
-import PokemonType from './PokemonType.vue';
-import SaveMyPokeBtn from './SaveMyPokeBtn.vue';
+import PokemonType from '@/components/PokemonType.vue';
+import SaveMyPokeBtn from '@/components/SaveMyPokeBtn.vue';
 
 export default {
   name: 'PokemonList',
@@ -104,7 +105,7 @@ export default {
       this.searchType = this.searchType === type ? '' : type;
     },
     onCardClick({ id }) {
-      // history.push(`${routerPath.DETAIL}?id=${id}`);
+      this.$router.push(`${routerPath.DETAIL}?id=${id}`);
     },
     onReset() {
       this.searchKeyword = '';

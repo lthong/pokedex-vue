@@ -1,9 +1,9 @@
 <template>
   <div class="nav-bar">
     <div class="left-items">
-      <router-link :to="routerPath.ROOT" exactActiveClass="active">{{
-        $t('common.pokedex')
-      }}</router-link>
+      <routerLink :to="routerPath.ROOT" exactActiveClass="active">
+        {{ $t('common.pokedex') }}
+      </routerLink>
     </div>
     <div class="right-items">
       <audio

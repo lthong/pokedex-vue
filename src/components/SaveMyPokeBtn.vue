@@ -4,7 +4,7 @@
     :class="[
       'save-my-poke-btn',
       {
-        active: myPokeIds.includes(id),
+        active,
       },
     ]"
     :src="iconPath"
@@ -26,8 +26,11 @@ export default {
   },
   computed: {
     ...mapState('pokemon', ['myPokeIds']),
+    active() {
+      return this.myPokeIds.includes(String(this.id));
+    },
     iconPath() {
-      return this.myPokeIds.includes(this.id) ? redLoveIcon : whiteLoveIcon;
+      return this.active ? redLoveIcon : whiteLoveIcon;
     },
   },
   methods: {
