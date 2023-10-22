@@ -237,7 +237,7 @@ export default {
       { immediate: true }
     );
   },
-  destory() {
+  destroyed() {
     clearTimeout(this.statesBarReadyTimerId);
   },
 };
