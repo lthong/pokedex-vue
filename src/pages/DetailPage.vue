@@ -70,7 +70,7 @@
               <div class="label">{{ $t('common.types') }}</div>
               <div class="content">
                 <PokemonType
-                  v-for="item in basicInfo.types"
+                  v-for="(item) in basicInfo.types"
                   :key="item.type.name"
                   :type="item.type.name"
                 />
@@ -228,7 +228,7 @@ export default {
     },
   },
   created() {
-    // vue router 在 query 更新後由於不會自動重新渲染，故監聽 id 變化重新取得資料
+    // vue router 在 query 更新後由於是同個組件所以不會重新渲染，故監聽 id 變化重新取得資料
     this.$watch(
       () => this.id,
       function () {
@@ -237,7 +237,7 @@ export default {
       { immediate: true }
     );
   },
-  destroyed() {
+  unmounted() {
     clearTimeout(this.statesBarReadyTimerId);
   },
 };
