@@ -5,29 +5,19 @@
         <label for="keyword">
           <img :src="assets.searchIcon" alt="search-icon" />
         </label>
-        <input
-          id="keyword"
-          class="keyword-input"
-          :value="searchKeyword"
-          @input="onSearchValueChange"
-          :placeholder="$t('common.search_placeholder')"
-        />
+        <input id="keyword" class="keyword-input" :value="searchKeyword" @input="onSearchValueChange"
+          :placeholder="$t('common.search_placeholder')" />
         <div class="reset-btn" @click="onReset">
           {{ $t('common.reset') }}
         </div>
       </div>
       <div class="poke-types">
-        <PokemonType
-          v-for="(type) in pokeTypes"
-          :key="type"
-          :type="type"
-          :class="{ active: type === searchType }"
-          @onTypeChange="onTypeChange"
-        />
+        <PokemonType v-for="type in pokeTypes" :key="type" :type="type" :class="{ active: type === searchType }"
+          @onTypeChange="onTypeChange" />
       </div>
     </div>
     <div class="content">
-      <PokemonListItem v-for="(item) in pokeData" :key="item.id" v-bind="item" @onCardClick="onCardClick" />
+      <PokemonListItem v-for="item in pokeData" :key="item.id" v-bind="item" @onCardClick="onCardClick" />
     </div>
   </div>
 </template>
@@ -106,12 +96,14 @@ export default {
   justify-content: center;
   flex-direction: column;
   padding-top: 90px;
+
   .search-field {
     .form {
       display: flex;
       align-items: center;
       width: 100%;
     }
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -123,6 +115,7 @@ export default {
     margin-bottom: 100px;
     width: 80%;
     position: relative;
+
     label {
       height: 34px;
       padding: 0 10px;
@@ -132,12 +125,14 @@ export default {
       align-items: center;
       border-radius: 3px 0 0 3px;
       cursor: pointer;
+
       img {
         width: 20px;
         height: 20px;
         filter: invert(0.3);
       }
     }
+
     .keyword-input {
       width: 60%;
       height: 35px;
@@ -147,6 +142,7 @@ export default {
       border-radius: 0 4px 4px 0;
       box-sizing: border-box;
     }
+
     .reset-btn {
       border: 1px solid #aaa;
       border-radius: 5px;
@@ -156,27 +152,33 @@ export default {
       text-align: center;
       white-space: nowrap;
       cursor: pointer;
+
       &:hover {
         background-color: #aaa;
       }
     }
+
     .poke-types {
       display: flex;
       flex-wrap: wrap;
       margin-top: 15px;
-      > div {
+
+      >div {
         margin-bottom: 8px;
         cursor: pointer;
         opacity: 0.6;
+
         &.active {
           opacity: 1;
         }
+
         &:hover {
           opacity: 1;
         }
       }
     }
   }
+
   .content {
     display: flex;
     flex-wrap: wrap;
@@ -184,10 +186,12 @@ export default {
     padding: 0 20px;
   }
 }
+
 @media screen and (max-width: 530px) {
   .poke-types {
     justify-content: center;
-    > div {
+
+    >div {
       flex-grow: 1;
     }
   }
